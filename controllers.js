@@ -21,8 +21,10 @@ function addMapping(router, mapping) {
         }
         if (url.startsWith('OPTIONS ')) {
             var path = url.substring(5)
-            router.options(path, mapping[url])
-            console.log(`注册路由：OPTIONS ${path}`)
+            router.options(path, async (ctx, next) => {
+                ctx.response.status = 200
+                ctx.response.body = '允许跨域'
+            })
         }
     }
 

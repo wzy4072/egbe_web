@@ -1,10 +1,8 @@
 var fs = require('fs');
 
-var url = '/stu/list/add'
+const readFile =  (url) => {
+  var result = JSON.parse(fs.readFileSync('./analogData' + url + '.json'));
+  return result
+}
 
-// var filses = fs.readdirSync('./analogData' + url)
-// console.log(filse)
-// fs.readdirSync(path)
-// var file = "./stulist.json";
-var result = JSON.parse(fs.readFileSync('./analogData' + url + '.json'));
-console.log(result);
+module.exports = readFile
