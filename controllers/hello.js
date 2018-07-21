@@ -7,7 +7,6 @@ var fn_hello = async (ctx, next) => {
 };
 var test = async (ctx, next) => {
     // ctx.response.type = 'application/json';
-    console.log(ctx)
     let result = readfile('/stu/list/add')
     ctx.response.body = result;
 };
