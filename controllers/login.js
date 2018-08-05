@@ -16,6 +16,10 @@ var login = async (ctx, next) => {
       resp.message = '密码不正确！'
       ctx.response.body = resp
     } else {
+      // 账号密码正确
+      // 1 设置session cookie
+      // ctx.cookies.get(name, [options])
+      
       let resp2 = readfile('/succ')
       ctx.response.body = resp2
     }
